@@ -30,10 +30,10 @@ pipeline{
         stage('Merging two branches'){
             steps{
                 script{
-                    git checkout "${env.Target_Branch}"
+                    git checkout ${Target_Branch}
                     echo "Moved into Targeted Branch:$Target_Branch"
                     git fetch origin "$Target_Branch"
-                    
+
 
                 }
             }
