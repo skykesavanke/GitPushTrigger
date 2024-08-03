@@ -5,6 +5,7 @@ pipeline{
          Git_Repo='https://github.com/skykesavanke/GitPushTrigger.git'
          Branch_One='main'
          Branch_two='develop'
+         Target_Branch='target'
     }
 
     stages{
@@ -23,6 +24,17 @@ pipeline{
                 script{
                     echo "Checking out branch :$Branch_Two"
                     git branch :"${env.Branch_Two}" , url: "${env.Git_Repo}"
+                }
+            }
+        }
+        stage('Merging two branches'){
+            steps{
+                script{
+                    git checkout "${env.Target_Branch}"
+                    echo "Moved into Targeted Branch:$Target_Branch"
+                    git fetch origin "$Target_Branch"
+                    
+
                 }
             }
         }
