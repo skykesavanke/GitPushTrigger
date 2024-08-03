@@ -11,7 +11,7 @@ pipeline{
         stage('checkout from first branch'){
             steps{
                 script{
-                    git branch :${env.Branch_One} , url:${env.Git_Repo}
+                    git branch :"${env.Branch_One}" , url:"${env.Git_Repo}"
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline{
         stage('checkout from second branch'){
             steps{
                 script{
-                    git branch :${env.Branch_Two} , url:${env.Git_Repo}
+                    git branch :"${env.Branch_Two}" , url: "${env.Git_Repo}"
                 }
             }
         }
