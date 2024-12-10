@@ -3,4 +3,4 @@ echo "Hello Everyone, Here I am triggering the pipeline after pushing code to re
 echo "Hi"
 echo "welcome"
 echo "hello"
-echo "How areu"
+
